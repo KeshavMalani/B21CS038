@@ -165,7 +165,25 @@ Process synchronization is essential in XV6 for several reasons:
 -Ordering of Execution: In some scenarios, the order in which processes execute specific tasks is critical. Synchronization mechanisms allow for controlled sequencing of operations, ensuring that certain actions are completed before others begin, preventing errors and unexpected outcomes.
 -Resource Allocation Fairness: Processes compete for limited resources like CPU time and memory. Synchronization mechanisms ensure fair allocation of resources, preventing any single process from monopolizing resources and hindering other processes' progress.
 XV6 employs various mechanisms to achieve process synchronization
+-Locks
+-Condition Variables
+-Semaphores:
+-Atomic Operations etc
 18)
-
+Interrupts in XV6 are essential for handling I/O operations promptly, responding to asynchronous events, preventing resource conflicts, and implementing process scheduling. They enable XV6 to maintain stability, responsiveness, and performance.They are handled through interrupt service routines (ISRs) triggered by hardware or software events.
+Significance: Enables asynchronous handling of events and improves system responsiveness.
+19)
+Virtual memory is a memory management technique that allows a process to have a virtual address space that is larger than the physical memory available. This is done by dividing the virtual address space into pages, and then mapping each page to a physical page in physical memory or to a location on disk.When a process accesses a virtual address, the memory management unit (MMU) translates the virtual address to a physical address. If the page is not in physical memory, the MMU will fault the process, which will cause the operating system to load the page from disk into physical memory.
+-Virtual memory has several advantages over using only physical memory:
+It allows processes to have more memory than is physically available. 
+It allows processes to share memory. 
+It can protect memory from unauthorized access.
+It can be used to implement demand paging.
+20)
+Boot Process in XV6:
+   - BIOS/UEFI initialization.
+   - Bootloader  loads XV6 kernel into memory.
+   - Kernel initialization, sets up memory, filesystems, and essential data structures.
+   - Transfer control to the main function, initiating the operating system.
 
 
